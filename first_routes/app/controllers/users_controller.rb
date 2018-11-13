@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if user
       render json: user
     else
-      render print: "No one here"
+      render plain: "No one here"
     end
   end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:username)
   end
 
   def destroy
